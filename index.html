@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+Muqtada Al-Khamees portfolio
+</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0f0f0f;
+    color: #f5f5f5;
+    padding-bottom: 100px;
+}
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+#nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #0f0f0f;
+    padding: 10px 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid #222;
+    z-index: 1000;
+}
+.nav-link {
+    text-decoration: none;
+    color: #f5f5f5;
+    padding: 8px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.nav-link:hover {
+    background-color: #2a2a2a;
+    transform: scale(1.05);
+}
+#hero {
+    padding-top: 30px;
+    text-align: center;
+  background:linear-gradient(rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)),
+        url("img/5d0f6387aa4f4955bca43823f4ffac0d.gif");
+        background-size: cover;
+    background-position: center;
+}
+#myimg{
+    width: 100px;
+    border-radius: 50%;
+    margin-top: 50px;
+}
+#hero h1 {
+    padding: 10px 0;
+    font-size: 1rem;
+}
+#myjob{
+    font-size: 0.8rem;
+}
+section {
+    padding: 60px 20px;
+}
+h2 {
+    margin-bottom: 20px;
+}
+#footer-line {
+    height: 2px;
+    background-color: #444;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #aaa;
+}
+.contact-btn{
+    width: 20px;
+}
+#contactlist{
+    display: flex;
+    gap: 15px;
+}
+@media (max-width: 600px) {
+    #nav-bar {
+        flex-wrap: wrap;
+    }
+}
+</style>
+</head>
+<body>
+<nav id="nav-bar">
+    <a href="#" onclick="document.getElementById('home').scrollIntoView(); return false;">
+        <img class="nav-link" src="icons/home_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.svg" alt="Home">
+        </a>
+    <a href="#" onclick="document.getElementById('about').scrollIntoView(); return false;">
+        <img class="nav-link" src="icons/info_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.svg" alt="About">
+        </a>
+    <a href="#" onclick="document.getElementById('contact').scrollIntoView(); return false;">
+        <img class="nav-link" src="icons/chat_info_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.svg" alt="Contact">
+        </a>
+</nav>
+<section id="hero">
+    <img id="myimg" src="img/IMG_٢٠٢٦٠٦٠٣_٠٩٤١٣٦.jpg" alt="my picture">
+    <h1>
+        <i>
+            Muqtada Al-Khamees
+            <br>
+            </i>
+            <i id="myjob">Software Engineer</i>
+            </h1>
+</section>
+<div class="container">
+<section id="home">
+    <h2>
+        Home
+        </h2>
+    <p>
+        Hi, my name is Muqtada Al-Khamees, I'm a software engineer, a web designer and an Arabic-English translator
+        </p>
+</section>
+<section id="about">
+    <h2>
+        About
+        </h2>
+    <p>
+        I live in Iraq, Baghdad, I was born in 2005, I'm about to receive my Computer Technical Engineering Bachelor's certificate after a few days, Arabic is my native language and I can speak English fluently, I can write programs and design websites using the following coding languages (HTML, CSS, Javascript, PHP, Matlab, C++ and Python), I have an Arabian educational Youtube channel that I originally made for my friends about college subjects, but now it's about work related matters and btw you are looking at my work, because I designed this website, It's a small one, but I want it simple and straight to the point, so if you want a portfolio website like this or a better one I can design one for you based on the style you want me to go with.
+        </p>
+</section>
+<section id="contact">
+    <h2>
+        Contact
+        </h2>
+    <div id="contactlist">
+<a href="https://t.me/WDIHF2" target="_blank">
+    <img loading="lazy" class="contact-btn" src="icons/telegram-svgrepo-com.svg" alt="Telegram">
+    </a>
+<a href="https://wa.me/qr/7TZNFLG25SCMB1" target="_blank">
+    <img loading="lazy" class="contact-btn" src="icons/whatsapp-svgrepo-com.svg" alt="Whatsapp">
+    </a>
+<a href="tel:+9647752729776" target="_blank">
+    <img loading="lazy" class="contact-btn" src="icons/phone-5981.svg" alt="phone number">
+    </a>
+<a href="https://www.youtube.com/@AliAhmed-oz5xh" target="_blank">
+    <img loading="lazy" class="contact-btn" src="icons/youtube-youtube-svgrepo-com.svg" alt="Youtube">
+    </a>
+    </div>
+</section>
+</div>
+<div id="footer-line">
+    
+</div>
+<footer>
+    &copy; 2026 All rights reserved
+</footer>
+<script>
+document.getElementById("myimg").addEventListener("click", function () {
+    if (this.requestFullscreen) {
+        this.requestFullscreen();
+    }
+});
+</script>
+</body>
+</html>
