@@ -3,18 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>
-Muqtada Al-Khamees portfolio
-</title>
+<title>Muqtada Al-Khamees Portfolio</title>
 <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-    #mydegrees {
-         width: 100%;
-    }
+#fullscreenimage {
+    width: 100%;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -53,16 +51,30 @@ body {
     background-color: #2a2a2a;
     transform: scale(1.05);
 }
+#lang-btn {
+    margin-left: auto;
+    background-color: #252525;
+    color: white;
+    border: 1px solid #555;
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+#lang-btn:hover {
+    background-color: #444;
+}
 #hero {
     padding-top: 30px;
     text-align: center;
-  background:linear-gradient(rgba(0,0,0,0.5),
-    rgba(0,0,0,0.5)),
+    background:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
         url("img/5d0f6387aa4f4955bca43823f4ffac0d.gif");
-        background-size: cover;
+    background-size: cover;
     background-position: center;
 }
-#myimg{
+#myimg {
     width: 100px;
     border-radius: 50%;
     margin-top: 50px;
@@ -71,7 +83,7 @@ body {
     padding: 10px 0;
     font-size: 1rem;
 }
-#myjob{
+#myjob {
     font-size: 0.8rem;
 }
 section {
@@ -89,12 +101,32 @@ footer {
     padding: 20px;
     color: #aaa;
 }
-.contact-btn{
+.contact-btn {
     width: 20px;
 }
-#contactlist{
+#contactlist {
     display: flex;
     gap: 15px;
+}
+/* Arabic adjustments */
+body[dir="rtl"] {
+    font-family: Tahoma, Arial, sans-serif;
+}
+body[dir="rtl"] #nav-bar {
+    flex-direction: row-reverse;
+}
+body[dir="rtl"] #lang-btn {
+    margin-left: 0;
+    margin-right: auto;
+}
+body[dir="rtl"] section {
+    text-align: right;
+}
+body[dir="rtl"] #hero {
+    text-align: center;
+}
+body[dir="rtl"] #contactlist {
+    flex-direction: row;
 }
 @media (max-width: 600px) {
     #nav-bar {
@@ -103,73 +135,158 @@ footer {
 }
 </style>
 </head>
-<body>
+<body dir="ltr">
 <nav id="nav-bar">
-    <a href="#" onclick="document.getElementById('home').scrollIntoView(); return false;">
-        <img class="nav-link" src="icons/home_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.svg" alt="Home">
-        </a>
-    <a href="#" onclick="document.getElementById('about').scrollIntoView(); return false;">
-        <img class="nav-link" src="icons/info_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.svg" alt="About">
-        </a>
-    <a href="#" onclick="document.getElementById('contact').scrollIntoView(); return false;">
-        <img class="nav-link" src="icons/chat_info_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.svg" alt="Contact">
-        </a>
+    <a href="#home" onclick="scrollToSection('home'); return false;">
+        <img class="nav-link"
+        src="icons/home_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.svg"
+        alt="Home" id="home-icon">
+    </a>
+    <a href="#about" onclick="scrollToSection('about'); return false;">
+        <img class="nav-link"
+        src="icons/info_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.svg"
+        alt="About" id="about-icon">
+    </a>
+    <a href="#contact" onclick="scrollToSection('contact'); return false;">
+        <img class="nav-link"
+        src="icons/chat_info_20dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.svg"
+        alt="Contact" id="contact-icon">
+    </a>
+    <button id="lang-btn" onclick="switchLanguage()">
+        العربية
+    </button>
 </nav>
 <section id="hero">
-    <img id="myimg" src="img/IMG_٢٠٢٦٠٦٠٣_٠٩٤١٣٦.jpg" alt="my picture">
+    <img id="myimg"
+    src="img/IMG_٢٠٢٦٠٦٠٣_٠٩٤١٣٦.jpg"
+    alt="my picture">
     <h1>
-        <i>
-            Muqtada Al-Khamees
-            <br>
-            </i>
-            <i id="myjob">Software Engineer</i>
-            </h1>
+        <i
+        data-en="Muqtada Al-Khamees"
+        data-ar="مقتدى الخميس"></i>
+        <br>
+        <i id="myjob"
+        data-en="technical Engineer"
+        data-ar="مهندس تقني"></i>
+    </h1>
 </section>
 <div class="container">
 <section id="home">
-    <h2>
-        Home
-        </h2>
-    <p>
-        Hi, my name is Muqtada Al-Khamees, I'm a software engineer, a web designer and an Arabic-English translator
+    <h2 data-en="Home" data-ar="الرئيسية">Home</h2>
+    <p
+    data-en="Hi, my name is Muqtada Al-Khamees, I'm a software engineer, a web designer, a graduate of Computer Technical Engineering department and an Arabic-English translator"
+    data-ar="مرحباً، اسمي مقتدى الخميس، أنا مهندس برمجيات ومصمم مواقع إلكترونية وخريج قسم هندسة تقنيات الحاسوب تخصص شباكت ومترجم من العربية إلى الإنجليزية وبالعكس">
+    Hi, my name is Muqtada Al-Khamees, I'm a software engineer, a web designer and an Arabic-English translator
     </p>
 </section>
 <section id="about">
-    <h2>
-        About
-        </h2>
-    <p>
-        I live in Iraq, Baghdad, I was born in 2005, I'm about to receive my Computer Technical Engineering Bachelor's certificate after a few days, Arabic is my native language and I can speak English fluently, I can write programs and design websites using the following coding languages (HTML, CSS, Javascript, PHP, Matlab, C++ and Python), I have an Arabian educational Youtube channel that I originally made for my friends about college subjects, but now it's about work related matters and btw you are looking at my work, because I designed this website, It's a small one, but I want it simple and straight to the point, so if you want a portfolio website like this or a better one I can design one for you based on the style you want me to go with.
-        </p>
-    <img id="mydegrees" src="img/IMG20260712141918.jpg" alt="my college 4th year degrees">
+    <h2 data-en="About" data-ar="نبذة عني">About</h2>
+    <p
+    data-en="I live in Iraq, Baghdad, I was born in 2005, I'm about to receive my Computer Technical Engineering Bachelor's certificate after a few days, Arabic is my native language and I can speak English fluently, I can write programs and design websites using the following coding languages (HTML, CSS, Javascript, PHP, Matlab, C++ and Python), I have an Arabian educational Youtube channel that I originally made for my friends about college subjects, but now it's about work related matters and btw you are looking at my work, because I designed this website, It's a small one, but I want it simple and straight to the point, so if you want a portfolio website like this or a better one I can design one for you based on the style you want me to go with, another website that I have designed is an online clothes shop for my uncle's shop, you can check the website with the QR code below"
+    data-ar="أعيش في العراق، بغداد، وُلدت عام 2005، وأنا على وشك الحصول على شهادة البكالوريوس في هندسة تقنيات الحاسوب خلال الأيام القليلة القادمة. اللغة العربية هي لغتي الأم، وأتحدث الإنجليزية بطلاقة. أستطيع كتابة البرامج وتصميم المواقع باستخدام لغات البرمجة التالية: HTML وCSS وJavaScript وPHP وMATLAB وC++ وPython.
+
+    أمتلك قناة تعليمية عربية على يوتيوب، أنشأتها في البداية لأصدقائي لشرح المواد الجامعية، لكنها أصبحت الآن تتناول مواضيع متعلقة بالعمل.
+
+    وبالمناسبة، أنت الآن تشاهد أحد أعمالي، فقد صممت هذا الموقع بنفسي. إنه موقع صغير، لكنني أفضل أن يكون بسيطاً ومباشراً. إذا كنت تريد موقعاً شخصياً لعرض أعمالك مثل هذا الموقع أو أفضل منه، فيمكنني تصميم واحد لك وفقاً للأسلوب الذي تفضله، موقع آخر قمت بتصميمه هو موقع لمحل ملابس لخالي، يمكنك تفقده عن طريق كود الQR الذي في الاسفل">
+    </p>
+    <img id="fullscreenimage"
+    src="img/clothes-shop-of-my-uncle-QR.jpg">
+    <p
+    data-en="below you can find a link to one of my videos where I explain many protocols in a video that doesn't exceed 24 minutes"
+    data-ar="في الاسفل تجد رابط لأحد فيديواتي أشرح فيه عدة بروتوكولات في فيديو لا يتجاوز 24 دقيقة"></p>
+    <br>
+    <a href="https://youtu.be/pINmPxEhSjA?si=YNPEALjiZqMIwP-T" target="_blank"
+    data-en="the video link"
+    data-ar="رابط الفيديو"></a>
+    <img
+    id="fullscreenimage"
+    src="img/cisco-diagram.jpg">
+    <p
+    data-en="and below you can see the grades of my 4th year in college"
+    data-ar="و في الأسفل يمكنك أن ترى درجاتي للمرحلة الرابعة">
+    </p>
+    <img id="fullscreenimage"
+    src="img/IMG20260712141918.jpg"
+    alt="my college 4th year degrees">
 </section>
 <section id="contact">
-    <h2>
-        Contact
-        </h2>
+    <h2 data-en="Contact" data-ar="التواصل">Contact</h2>
     <div id="contactlist">
-<a href="https://t.me/WDIHF2" target="_blank">
-    <img loading="lazy" class="contact-btn" src="icons/telegram-svgrepo-com.svg" alt="Telegram">
-    </a>
-<a href="https://wa.me/qr/7TZNFLG25SCMB1" target="_blank">
-    <img loading="lazy" class="contact-btn" src="icons/whatsapp-svgrepo-com.svg" alt="Whatsapp">
-    </a>
-<a href="tel:+9647752729776" target="_blank">
-    <img loading="lazy" class="contact-btn" src="icons/phone-5981.svg" alt="phone number">
-    </a>
-<a href="https://www.youtube.com/@AliAhmed-oz5xh" target="_blank">
-    <img loading="lazy" class="contact-btn" src="icons/youtube-youtube-svgrepo-com.svg" alt="Youtube">
-    </a>
+        <a href="https://t.me/WDIHF2" target="_blank">
+            <img loading="lazy" class="contact-btn"
+            src="icons/telegram-svgrepo-com.svg"
+            alt="Telegram">
+        </a>
+        <a href="https://wa.me/qr/7TZNFLG25SCMB1" target="_blank">
+            <img loading="lazy" class="contact-btn"
+            src="icons/whatsapp-svgrepo-com.svg"
+            alt="Whatsapp">
+        </a>
+        <a href="tel:+9647752729776">
+            <img loading="lazy" class="contact-btn"
+            src="icons/phone-5981.svg"
+            alt="Phone number">
+        </a>
+        <a href="https://www.youtube.com/@AliAhmed-oz5xh" target="_blank">
+            <img loading="lazy" class="contact-btn"
+            src="icons/youtube-youtube-svgrepo-com.svg"
+            alt="Youtube">
+        </a>
     </div>
 </section>
 </div>
-<div id="footer-line">
-    
-</div>
-<footer>
-    &copy; 2026 All rights reserved
+<div id="footer-line"></div>
+<footer
+data-en="© 2026 All rights reserved"
+data-ar="© 2026 جميع الحقوق محفوظة">
+© 2026 All rights reserved
 </footer>
 <script>
+// Current language
+let currentLang = localStorage.getItem("language") || "en";
+// Switch language
+function switchLanguage() {
+    currentLang = currentLang === "en" ? "ar" : "en";
+    localStorage.setItem("language", currentLang);
+    updateLanguage();
+}
+// Update all translated elements
+function updateLanguage() {
+    document.documentElement.lang = currentLang;
+    document.body.dir = currentLang === "ar" ? "rtl" : "ltr";
+    // Change all elements with translation attributes
+    document.querySelectorAll("[data-en][data-ar]").forEach(element => {
+        element.textContent = element.getAttribute(
+            currentLang === "ar" ? "data-ar" : "data-en"
+        );
+    });
+    // Update language button
+document.getElementById("lang-btn").textContent =
+        currentLang === "ar" ? "English" : "العربية";
+    // Update job title document.getElementById("myjob").textContent =
+        currentLang === "ar" ? "مهندس برمجيات" : "Software Engineer";
+    // Update image navigation accessibility labels
+    document.getElementById("home-icon").alt =
+        currentLang === "ar" ? "الرئيسية" : "Home";
+
+    document.getElementById("about-icon").alt =
+        currentLang === "ar" ? "نبذة عني" : "About";
+ document.getElementById("contact-icon").alt =
+        currentLang === "ar" ? "التواصل" : "Contact";
+    // Update page title
+    document.title = currentLang === "ar"
+        ? "الcv الخاص بمقتدى الخميس"
+        : "Muqtada Al-Khamees Portfolio";
+}
+// Scroll to section
+function scrollToSection(id) {
+ document.getElementById(id).scrollIntoView({
+        behavior: "smooth"
+    });
+}
+// Apply saved language on page load
+updateLanguage();
+// Fullscreen profile picture
 document.getElementById("myimg").addEventListener("click", function () {
     if (this.requestFullscreen) {
         this.requestFullscreen();
