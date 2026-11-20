@@ -174,9 +174,8 @@ body[dir="rtl"] #contactlist {
 <section id="home">
     <h2 data-en="Home" data-ar="الرئيسية">Home</h2>
     <p
-    data-en="Hi, my name is Muqtada Al-Khamees, I'm a technical engineer, a web designer, a graduate of Computer Technical Engineering department, specializing in networks and an Arabic-English translator"
+    data-en="Hi, my name is Muqtada Al-Khamees, I'm a technical engineer, a web designer, a graduate of Computer Technical Engineering department and an Arabic-English translator"
     data-ar="مرحباً، اسمي مقتدى الخميس، أنا مهندس تقني ومصمم مواقع إلكترونية وخريج قسم هندسة تقنيات الحاسوب تخصص شباكت ومترجم عربي-إنجليزي">
-    Hi, my name is Muqtada Al-Khamees, I'm a technical engineer, a web designer and an Arabic-English translator
     </p>
 </section>
 <section id="about">
@@ -242,7 +241,6 @@ data-ar="© 2026 جميع الحقوق محفوظة">
 © 2026 All rights reserved
 </footer>
 <script>
-// Current language
 let currentLang = localStorage.getItem("language") || "en";
 // Switch language
 function switchLanguage() {
@@ -250,7 +248,6 @@ function switchLanguage() {
     localStorage.setItem("language", currentLang);
     updateLanguage();
 }
-// Update all translated elements
 function updateLanguage() {
     document.documentElement.lang = currentLang;
     document.body.dir = currentLang === "ar" ? "rtl" : "ltr";
@@ -260,12 +257,10 @@ function updateLanguage() {
             currentLang === "ar" ? "data-ar" : "data-en"
         );
     });
-    // Update language button
 document.getElementById("lang-btn").textContent =
         currentLang === "ar" ? "English" : "العربية";
-    // Update job title document.getElementById("myjob").textContent =
+ document.getElementById("myjob").textContent =
         currentLang === "ar" ? "مهندس برمجيات" : "Software Engineer";
-    // Update image navigation accessibility labels
     document.getElementById("home-icon").alt =
         currentLang === "ar" ? "الرئيسية" : "Home";
 
@@ -273,20 +268,16 @@ document.getElementById("lang-btn").textContent =
         currentLang === "ar" ? "نبذة عني" : "About";
  document.getElementById("contact-icon").alt =
         currentLang === "ar" ? "التواصل" : "Contact";
-    // Update page title
     document.title = currentLang === "ar"
         ? "الcv الخاص بمقتدى الخميس"
         : "Muqtada Al-Khamees Portfolio";
 }
-// Scroll to section
 function scrollToSection(id) {
  document.getElementById(id).scrollIntoView({
         behavior: "smooth"
     });
 }
-// Apply saved language on page load
 updateLanguage();
-// Fullscreen profile picture
 document.getElementById("myimg").addEventListener("click", function () {
     if (this.requestFullscreen) {
         this.requestFullscreen();
