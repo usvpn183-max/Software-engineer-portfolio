@@ -242,7 +242,6 @@ data-ar="© 2026 جميع الحقوق محفوظة">
 </footer>
 <script>
 let currentLang = localStorage.getItem("language") || "en";
-// Switch language
 function switchLanguage() {
     currentLang = currentLang === "en" ? "ar" : "en";
     localStorage.setItem("language", currentLang);
@@ -251,7 +250,6 @@ function switchLanguage() {
 function updateLanguage() {
     document.documentElement.lang = currentLang;
     document.body.dir = currentLang === "ar" ? "rtl" : "ltr";
-    // Change all elements with translation attributes
     document.querySelectorAll("[data-en][data-ar]").forEach(element => {
         element.textContent = element.getAttribute(
             currentLang === "ar" ? "data-ar" : "data-en"
